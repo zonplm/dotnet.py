@@ -33,3 +33,7 @@ Rev:    0.1
     3.5.30729.5420     SP1  32bit C:\Windows\Microsoft.NET\Framework\v3.5\ 
     4.0.30319:Client   GA   32bit C:\Windows\Microsoft.NET\Framework\v4.0.30319\  
     4.0.30319:Full     GA   32bit c:\Windows\Microsoft.NET\Framework\v4.0.30319\ 
+
+-Misc.
+	For information on .net installation registry keys, see:
+	http://support.microsoft.com/kb/318785
