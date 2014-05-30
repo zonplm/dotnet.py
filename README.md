@@ -42,3 +42,4 @@ Rev:    0.1
 	For information on .net installation registry keys, see:
 	http://support.microsoft.com/kb/318785
 	http://msdn.microsoft.com/en-us/library/hh925568(v=vs.110).aspx
+	http://msdn.microsoft.com/en-us/library/hh925567(v=vs.110).aspx

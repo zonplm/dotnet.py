@@ -31,6 +31,7 @@ Rev:    0.1
 import json
 import os
 import sys
+import platform
 
 try:
     from _winreg import *
@@ -38,7 +39,7 @@ except:
     print '''Unable to import _winreg module!
 Please Check your python installation.
 '''
-    exit(-1)
+    sys.exit(-1)
 
 DOT_NET_VERSIONS = {
     '1.0': (r'Software\Microsoft\Active Setup\Installed Components\{78705f0d-e8db-4b2d-8193-982bdda15ecd}',
@@ -134,7 +135,8 @@ class DotNetManager(object):
             #4, return both Client and Full profiles
             elif iver == "4":
                 profile = subkeyname.split("\\")[-1]
-                theVer.version += ":"+ profile
+                if theVer:
+                    theVer.version += ":"+ profile
           
             if theVer: allProfile.append(theVer)
               
@@ -176,7 +178,9 @@ if __name__ == "__main__":
         print os.environ['COMPUTERNAME'], ':'
     else:
         print args.machine, ":"
-        
+    
+    print(str(platform.architecture() )+ ':' + str(platform.win32_ver()) )
+            
     dotnetmgr = DotNetManager(args.machine)
     if (args.check == "all"):
         allvers = dotnetmgr.getalldotnetversions()
@@ -187,7 +191,9 @@ if __name__ == "__main__":
     for ver in sorted(allvers, lambda x,y: cmp(x.version, y.version)):
             print str(ver)
     
-    exit(0)    
+    
+
+    sys.exit(0)    
     #sys.stdin.readline()
     
     
